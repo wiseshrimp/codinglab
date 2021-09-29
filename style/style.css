@@ -1,0 +1,297 @@
+:root {
+    --cl-blue: #0080ff;
+}
+
+body {
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+    background-image: linear-gradient(130deg, rgb(221, 221, 221), #0080ff);
+    margin: 0;
+    -webkit-animation: backgroundanim 5s ease infinite;
+    -moz-animation: backgroundanim 5s ease infinite;
+    animation: backgroundanim 5s ease infinite;
+    background-size: 200% 200%;
+    font-family: 'Miller Text', sans-serif;
+}
+
+@font-face {
+    font-display: block;
+    font-family: "Bureau Grot Condensed";
+    src: url("https://type.cargo.site/files/BureauGrotCondensed-Book.woff2") format("woff2"), url("https://type.cargo.site/files/BureauGrotCondensed-Book.woff") format("woff");
+    font-style: normal;
+    font-weight: normal;
+    unicode-range: U+0000-DFFF, U+F900-FFFD;
+}
+
+@font-face {
+    font-display: block;
+    font-family: "Bureau Grot Condensed";
+    src: url("https://type.cargo.site/files/BureauGrotCondensed-Bold.woff2") format("woff2"), url("https://type.cargo.site/files/BureauGrotCondensed-Bold.woff") format("woff");
+    font-style: normal;
+    font-weight: bold;
+    unicode-range: U+0000-DFFF, U+F900-FFFD;
+}
+
+@font-face {
+    font-display: block;
+    font-family: "Miller Text";
+    src: url("https://type.cargo.site/files/MillerText-Roman.woff") format("woff");
+    font-style: normal;
+    font-weight: normal;
+    unicode-range: U+0000-DFFF, U+F900-FFFD;
+}
+
+@font-face {
+    font-display: block;
+    font-family: "Miller Text";
+    src: url("https://type.cargo.site/files/MillerText-Italic.woff") format("woff");
+    font-style: italic;
+    font-weight: normal;
+    unicode-range: U+0000-DFFF, U+F900-FFFD;
+}
+
+@font-face {
+    font-display: block;
+    font-family: "Miller Text";
+    src: url("https://type.cargo.site/files/MillerText-Bold.woff") format("woff");
+    font-style: normal;
+    font-weight: bold;
+    unicode-range: U+0000-DFFF, U+F900-FFFD;
+}
+
+@font-face {
+    font-display: block;
+    font-family: "Miller Text";
+    src: url("https://type.cargo.site/files/MillerText-BoldItalic.woff") format("woff");
+    font-style: italic;
+    font-weight: bold;
+    unicode-range: U+0000-DFFF, U+F900-FFFD;
+}
+
+
+/* Hours */
+
+.hours-container {
+    height: calc(100% - 10px);
+    width: calc(100% - 20px);
+    border: 10px solid var(--cl-blue);
+    border-bottom: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo {
+    background-image: url('./logo.png');
+    height: 30%;
+    width: 30%;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    margin-bottom: auto;
+    transition: all 0.5s ease-in-out;
+}
+
+
+/* #hours {
+    display: none;
+} */
+
+.hours {
+    display: block;
+    position: absolute;
+    width: calc(100% - 20px);
+    bottom: 0;
+}
+
+#hours-first,
+#hours-second,
+#events {
+    display: flex;
+    flex-direction: column;
+    margin-top: auto;
+    width: calc(100% - 20px);
+    transition: opacity 1s ease-in-out;
+    opacity: 0;
+    bottom: 0;
+    position: absolute;
+    background-color: rgb(221, 221, 221);
+    border-left: 10px solid var(--cl-blue);
+    border-right: 10px solid var(--cl-blue);
+    /* display: none; */
+}
+
+#hours-first {
+    /* display: block; */
+}
+
+#hours-first>.mentor-row:first-child,
+#hours-second>.mentor-row:first-child {
+    border-top: 4px solid var(--cl-blue);
+}
+
+.mentor-row,
+.event-row {
+    display: flex;
+    border: 4px solid var(--cl-blue);
+    border-left: none;
+    border-right: none;
+    border-top: none;
+    padding: 10px 0;
+}
+
+.mentor-row:last-child,
+.mentor-row:last-child,
+.event-row:last-child {
+    border-bottom: none;
+}
+
+.mentor-row>div:first-child,
+.event-row>div:first-child {
+    width: 20%;
+    font-size: 30px;
+    text-transform: uppercase;
+    margin-left: 5%;
+    color: var(--cl-blue);
+    font-family: 'Bureau Grot Condensed', sans-serif;
+    justify-content: end;
+}
+
+.mentor-row>div:nth-child(2),
+.event-row>div:nth-child(2) {
+    width: 20%;
+    margin: 0 2%;
+    text-transform: uppercase;
+    text-align: center;
+    font-family: 'Bureau Grot Condensed';
+    font-weight: 100;
+    font-size: larger;
+    color: #383838;
+    text-align: left;
+}
+
+.mentor-row>div {
+    display: flex;
+    align-items: center;
+}
+
+.mentor-row>div:last-child {
+    width: 60%;
+    margin-right: 5%;
+    justify-content: left;
+    font-family: 'brother-1816';
+    text-transform: lowercase;
+}
+
+#events-container {
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    opacity: 0;
+}
+
+#events {
+    border-top: 10px solid var(--cl-blue);
+    opacity: 1;
+    position: relative;
+}
+
+.events-header {
+    font-size: 40px;
+    font-family: 'Bureau Grot Condensed';
+    margin: 20px 10px;
+    text-align: center;
+    background-color: #dddddd;
+    border: 10px solid #0080ff;
+    /* width: 100%; */
+    border-left: none;
+    border-right: none;
+    color: var(--cl-blue);
+}
+
+.event-row>div:nth-child(2) {
+    width: 60%;
+    text-align: left;
+    display: flex;
+    align-items: center;
+}
+
+.event-row>div:last-child {
+    font-family: 'Bureau Grot Condensed';
+    display: flex;
+    align-items: center;
+    text-transform: uppercase;
+}
+
+#website {
+    height: 100vh;
+    width: 100vw;
+    position: absolute;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Bureau Grot Condensed';
+    text-transform: uppercase;
+    font-size: 50px;
+    flex-direction: column;
+    opacity: 0;
+}
+
+#website>div {
+    color: var(--cl-blue);
+    background-color: #dddddd;
+    padding: 10px;
+    border: 10px solid var(--cl-blue);
+    margin: 10px;
+}
+
+@-webkit-keyframes backgroundanim {
+    0% {
+        background-position: 10% 0%
+    }
+    50% {
+        background-position: 91% 100%
+    }
+    100% {
+        background-position: 10% 0%
+    }
+}
+
+@-moz-keyframes backgroundanim {
+    0% {
+        background-position: 10% 0%
+    }
+    50% {
+        background-position: 91% 100%
+    }
+    100% {
+        background-position: 10% 0%
+    }
+}
+
+@keyframes backgroundanim {
+    0% {
+        background-position: 10% 0%
+    }
+    50% {
+        background-position: 91% 100%
+    }
+    100% {
+        background-position: 10% 0%
+    }
+}
+
+@keyframes logoanim {
+    0% {
+        height: 30%;
+        width: 30%;
+    }
+    10% {
+        height: 80%;
+        width: 80%;
+        transform: rotate(0deg);
+    }
+}
